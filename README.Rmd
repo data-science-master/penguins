@@ -1,0 +1,63 @@
+---
+output: github_document
+author: "David Gerard"
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# Simple practice for creating a makefile
+
+## Introduction
+
+This is a simple exercise for creating a makefile to manager a small project that examines the really cool [Palmer Penguins data](https://allisonhorst.github.io/palmerpenguins/).
+
+The files in the final report are:
+
+- Makefile
+- Readme.Rmd
+- Readme.md
+- analysis
+    - classify_penguins.R
+    - penguin_report.html
+    - penguin_report.Rmd
+    - plot_penguin.R
+- output
+    - penguin_class.csv
+    - penguin_pairs.png
+
+These files have the following dependency structure:
+
+```{r dependency-graph, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(ggdag)
+set.seed(15)
+dagify("penguin_pairs.pdf" ~ "plot_penguin.R",
+       "penguin_class.csv" ~ "classify_penguins.R",
+       "penguin_report.html" ~ "penguin_pairs.pdf",
+       "penguin_report.html" ~ "penguin_class.csv",
+       "penguin_report.html" ~ "penguin_report.Rmd") %>%
+  ggdag(layout = "sugiyama",
+        text_col = "black",
+        node = FALSE) +
+  theme_void() +
+  xlim(-0.5, 2.5)
+```
+
+# Instructions
+
+1. Modify the Makefile to automatically manage this pipeline.
+
+2. Run `make` in the terminal to generate all of the output (penguin_class.csv, penguin_pairs.png, and penguin_report.html)
+
+3. Change the color scheme in the pairs plot and re-run `make`.
+
+4. Correct the date field in the YAML header in "penguin_report.html" and re-run `make`
+

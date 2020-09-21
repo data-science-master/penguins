@@ -1,0 +1,27 @@
+---
+title: "Penguins Report"
+author: "David Gerard"
+date: "00/00/00"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The Palmer Archipelago Penguins Data is a really cool alternative to the famous iris data. Not only does the penguins data **not** come from a eugenics journal, but it also includes interesting features for education, like a satisfying way to demonstrate simple classifiers, and a nice demonstration of Simpson's paradox (if you look at the association between bill depth and flipper length, e.g.).
+
+I made a pairs plot for the penguins data, and here it is:
+
+  ![](../output/penguin_pairs.png)\ 
+  
+When I ran a simple random forest classifier using just the bill measurements with 100 trees in the ensemble, I estimated that this classifier has a general accuracy of the following:
+
+```{r, message = FALSE}
+library(readr)
+library(dplyr)
+read_csv("../output/penguin_class.csv") %>%
+  knitr::kable()
+```
+
+I hope you enjoyed this report!
