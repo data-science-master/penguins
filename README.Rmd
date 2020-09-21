@@ -1,5 +1,6 @@
 ---
 output: github_document
+title: "Simple practice for creating a makefile using Palmer penguins data"
 author: "David Gerard"
 ---
 
@@ -12,8 +13,6 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-
-# Simple practice for creating a makefile
 
 ## Introduction
 

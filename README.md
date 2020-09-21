@@ -1,8 +1,8 @@
+Simple practice for creating a makefile using Palmer penguins data
+================
 David Gerard
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# Simple practice for creating a makefile
 
 ## Introduction
 
