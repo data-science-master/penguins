@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-This is a simple exercise for creating a makefile to manager a small project that examines the really cool [Palmer Penguins data](https://allisonhorst.github.io/palmerpenguins/).
+This is a simple exercise for creating a makefile to manage a small project that examines the really cool [Palmer Penguins data](https://allisonhorst.github.io/palmerpenguins/).
 
 The files in the final report are:
 
@@ -38,9 +38,9 @@ These files have the following dependency structure:
 library(tidyverse)
 library(ggdag)
 set.seed(15)
-dagify("penguin_pairs.pdf" ~ "plot_penguin.R",
+dagify("penguin_pairs.png" ~ "plot_penguin.R",
        "penguin_class.csv" ~ "classify_penguins.R",
-       "penguin_report.html" ~ "penguin_pairs.pdf",
+       "penguin_report.html" ~ "penguin_pairs.png",
        "penguin_report.html" ~ "penguin_class.csv",
        "penguin_report.html" ~ "penguin_report.Rmd") %>%
   ggdag(layout = "sugiyama",

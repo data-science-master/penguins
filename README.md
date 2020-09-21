@@ -6,7 +6,7 @@ David Gerard
 
 ## Introduction
 
-This is a simple exercise for creating a makefile to manager a small
+This is a simple exercise for creating a makefile to manage a small
 project that examines the really cool [Palmer Penguins
 data](https://allisonhorst.github.io/palmerpenguins/).
 
