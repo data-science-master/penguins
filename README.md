@@ -30,6 +30,15 @@ These files have the following dependency structure:
 
 # Instructions
 
+0.  Make sure you have the necessary R packages installed:
+    
+    ``` r
+    library(tidyverse)
+    library(tidymodels)
+    library(GGally)
+    library(palmerpenguins)
+    ```
+
 1.  Modify the Makefile to automatically manage this pipeline.
 
 2.  Run `make` in the terminal to generate all of the output
