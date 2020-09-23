@@ -37,6 +37,7 @@ These files have the following dependency structure:
     library(tidymodels)
     library(GGally)
     library(palmerpenguins)
+    library(randomForest)
     ```
 
 1.  Modify the Makefile to automatically manage this pipeline.

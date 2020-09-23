@@ -59,6 +59,7 @@ dagify("penguin_pairs.png" ~ "plot_penguin.R",
     library(tidymodels)
     library(GGally)
     library(palmerpenguins)
+    library(randomForest)
     ```
 
 1. Modify the Makefile to automatically manage this pipeline.
