@@ -12,17 +12,17 @@ data](https://allisonhorst.github.io/palmerpenguins/).
 
 The files in the final report are:
 
-  - Makefile
-  - Readme.Rmd
-  - Readme.md
-  - analysis
-      - classify\_penguins.R
-      - penguin\_report.html
-      - penguin\_report.Rmd
-      - plot\_penguin.R
-  - output
-      - penguin\_class.csv
-      - penguin\_pairs.png
+- Makefile
+- Readme.Rmd
+- Readme.md
+- analysis
+  - classify_penguins.R
+  - penguin_report.qmd
+  - plot_penguin.R
+- output
+  - penguin_class.csv
+  - penguin_pairs.png
+  - penguin_report.html
 
 These files have the following dependency structure:
 
@@ -31,21 +31,22 @@ These files have the following dependency structure:
 # Instructions
 
 0.  Make sure you have the necessary R packages installed:
-    
+
     ``` r
     library(tidyverse)
     library(tidymodels)
     library(GGally)
     library(palmerpenguins)
     library(randomForest)
+    library(gt)
     ```
 
 1.  Modify the Makefile to automatically manage this pipeline.
 
 2.  Run `make` in the terminal to generate all of the output
-    (penguin\_class.csv, penguin\_pairs.png, and penguin\_report.html)
+    (penguin_class.csv, penguin_pairs.png, and penguin_report.html)
 
 3.  Change the color scheme in the pairs plot and re-run `make`.
 
-4.  Correct the date field in the YAML header in “penguin\_report.html”
+4.  Correct the date field in the YAML header in “penguin_report.html”
     and re-run `make`

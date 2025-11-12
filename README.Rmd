@@ -25,12 +25,12 @@ The files in the final report are:
 - Readme.md
 - analysis
     - classify_penguins.R
-    - penguin_report.html
-    - penguin_report.Rmd
+    - penguin_report.qmd
     - plot_penguin.R
 - output
     - penguin_class.csv
     - penguin_pairs.png
+    - penguin_report.html
 
 These files have the following dependency structure:
 
@@ -42,7 +42,7 @@ dagify("penguin_pairs.png" ~ "plot_penguin.R",
        "penguin_class.csv" ~ "classify_penguins.R",
        "penguin_report.html" ~ "penguin_pairs.png",
        "penguin_report.html" ~ "penguin_class.csv",
-       "penguin_report.html" ~ "penguin_report.Rmd") %>%
+       "penguin_report.html" ~ "penguin_report.qmd") %>%
   ggdag(layout = "sugiyama",
         text_col = "black",
         node = FALSE) +
@@ -60,6 +60,7 @@ dagify("penguin_pairs.png" ~ "plot_penguin.R",
     library(GGally)
     library(palmerpenguins)
     library(randomForest)
+    library(gt)
     ```
 
 1. Modify the Makefile to automatically manage this pipeline.
