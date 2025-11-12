@@ -2,7 +2,9 @@
 title: "Penguins Report"
 author: "David Gerard"
 date: "00/00/00"
-output: html_document
+format: 
+  html:
+    embed-resources: true
 ---
 
 ```{r setup, include=FALSE}
@@ -20,8 +22,9 @@ When I ran a simple random forest classifier using just the bill measurements wi
 ```{r, message = FALSE}
 library(readr)
 library(dplyr)
-read_csv("../output/penguin_class.csv") %>%
-  knitr::kable()
+library(gt)
+read_csv("../output/penguin_class.csv") |>
+  gt()
 ```
 
 I hope you enjoyed this report!
